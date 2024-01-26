@@ -1,0 +1,96 @@
+<?php
+
+//require_once( realpath( '.' ) . '/vendor/autoload.php' );
+
+include '../FastServer/src/FastServer/App.php';
+  
+$app = new \Basttyy\FastServer\App( array(
+  'default_layout' => 'layout'
+) );
+
+$app->inject( new \Basttyy\FastServer\Middleware\RequestTimer() );
+$app->inject( function( $request, $response, $next ){
+  $response->once( 'end', function() use ( $request, $response ){
+    echo "$request $response in $request->duration ms" . PHP_EOL;
+  });
+  $next();
+} );
+
+$app->inject( function( $req, $res, $next ){
+  $res->setHeader('X-Powered-By', 'Awesomesauce');
+  $next();
+} );
+
+$app->inject( new \Basttyy\FastServer\Middleware\ExceptionHandler );
+$app->inject( new \Basttyy\FastServer\Middleware\BasicAuth( function( $credentials, $success, $failure ){
+  $username = $credentials['username'];
+  $password = $credentials['password'];
+  if ( strtolower( $username ) == 'admin' && $password == "secret" ) {
+    $success( $username );    
+  } else {
+    $failure();
+  }
+} ) );
+$app->inject( new \Basttyy\FastServer\Middleware\StaticFiles( __DIR__ . '/public' ) );
+
+/**
+ * Responds to GET / renders plain text "Hello World"
+ * @author Beau Collins
+ */
+$app->get( '/', function( $req, $res, $next ){
+  $res->render( 'home' );
+});
+
+/**
+ * Responds to GET /profile and renders the profile.php template
+ * @author Beau Collins
+ */
+$app->get( '/profile', function( $req, $res, $next ){
+  $user = new stdClass();
+  $user->name = "Beau Collins";
+  $user->username = "beaucollins";
+  $user->url = "http://viewsource.beaucollins.com";
+  $res->render( 'profile', array( 'user' => $user ) );
+});
+
+$app->get( '/form', function( $request, $response ){
+  $response->render( 'form' );
+} );
+
+$app->post( '/form', new \Basttyy\FastServer\Middleware\FormBodyParser() , function( $request, $response ){
+  $response->render( 'form', array( 'hello' => $request->body['hello'] ) );
+} );
+
+$app->get( '/upload', function( $request, $response ){
+  $response->render( 'upload' );  
+} );
+
+$app->post( '/upload', new \Basttyy\FastServer\Middleware\MultipartBodyParser(), function( $request, $response ){
+  $response->render( 'upload' );
+} );
+
+$app->get( '/login', function( $request, $response, $next ){
+  if ( !$request->user ) {
+    \Basttyy\FastServer\Middleware\BasicAuth::sendUnauthorized( $response );
+  } else {
+    echo "We have a user: " . $request->user . PHP_EOL;
+    $response->redirectTo( '/', 302 );
+  }
+});
+
+$app->get( '/wait', function( $request, $response ){
+  // this blocks!
+  shell_exec( 'sleep 15' );
+  $response->render( 'wait' );
+} );
+
+$app->get( '/updown', function( $request, $response, $next ){
+  $response->render( 'updown' );
+});
+  
+$app->post( '/updown', new \Basttyy\FastServer\Middleware\MultipartBodyParser(), function( $request, $response, $next ){
+  $file = $request->body['file'];
+  $response->sendFile( $file, array( 'attachment' => $file->filename ) );
+});
+
+return $app;
