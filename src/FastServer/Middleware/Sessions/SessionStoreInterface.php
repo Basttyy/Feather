@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer\Middleware\Sessions;
+namespace Feather\Middleware\Sessions;
 
 interface SessionStoreInterface {
   

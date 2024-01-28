@@ -1,4 +1,4 @@
-<?php namespace Basttyy\FastServer\Middleware\ExceptionHandler; ?><!DOCTYPE html>
+<?php namespace Feather\Middleware\ExceptionHandler; ?><!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">

@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer;
+namespace Feather;
 
 class ResponseHeaders extends Headers {
   

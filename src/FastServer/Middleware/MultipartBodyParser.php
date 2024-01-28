@@ -1,6 +1,6 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
-use Basttyy\FastServer\Http\Request;
+namespace Feather\Middleware;
+use Feather\Http\Request;
 use Evenement\EventEmitter;
 use React\Stream\WritableStreamInterface;
 

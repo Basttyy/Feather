@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer;
+namespace Feather;
 use Psr\Http\Message\ServerRequestInterface as HttpRequest;
 use Evenement\EventEmitter;
 use React\Stream\ReadableStreamInterface;

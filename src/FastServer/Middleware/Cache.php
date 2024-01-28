@@ -1,6 +1,6 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
-use Basttyy\FastServer\Exception;
+namespace Feather\Middleware;
+use Feather\Exception;
 
 class Cache {
   

@@ -1,6 +1,6 @@
 <?php
 
-namespace Basttyy\FastServer;
+namespace Feather;
 
 class Settings {
   

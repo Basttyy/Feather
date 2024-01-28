@@ -1,7 +1,7 @@
 <?php
 
-namespace Basttyy\FastServer\Middleware;
-use Basttyy\FastServer\Utils;
+namespace Feather\Middleware;
+use Feather\Utils;
 use Evenement\EventEmitter;
 
 class StaticFiles {

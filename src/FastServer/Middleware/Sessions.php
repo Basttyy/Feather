@@ -1,10 +1,10 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
-use Basttyy\FastServer\Middleware\Sessions\SessionStoreInterface;
-use Basttyy\FastServer\Middleware\Sessions\Session;
-use Basttyy\FastServer\Utils;
-use Basttyy\FastServer\Middleware\Sessions\MemoryStore;
-use Basttyy\FastServer\Middleware\Cookies\Cookie;
+namespace Feather\Middleware;
+use Feather\Middleware\Sessions\SessionStoreInterface;
+use Feather\Middleware\Sessions\Session;
+use Feather\Utils;
+use Feather\Middleware\Sessions\MemoryStore;
+use Feather\Middleware\Cookies\Cookie;
 
 class Sessions {
   

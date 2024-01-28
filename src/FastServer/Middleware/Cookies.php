@@ -1,6 +1,6 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
-use Basttyy\FastServer\Middleware\Cookies\Cookie;
+namespace Feather\Middleware;
+use Feather\Middleware\Cookies\Cookie;
 
 class Cookies {
   

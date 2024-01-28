@@ -1,6 +1,6 @@
 <?php
-namespace Basttyy\FastServer\Middleware\Sessions;
-use Basttyy\FastServer\Middleware\Sessions\SessionStoreInterface;
+namespace Feather\Middleware\Sessions;
+use Feather\Middleware\Sessions\SessionStoreInterface;
 use Predis\Async\Client as PredisClient;
 
 class PredisStore implements SessionStoreInterface {

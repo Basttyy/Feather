@@ -1,7 +1,7 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
+namespace Feather\Middleware;
 
-use Basttyy\FastServer\Exception\NotFound;
+use Feather\Exception\NotFound;
 
 class Router {
   

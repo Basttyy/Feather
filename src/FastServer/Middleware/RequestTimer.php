@@ -1,6 +1,6 @@
 <?php
 
-namespace Basttyy\FastServer\Middleware;
+namespace Feather\Middleware;
 
 class RequestTimer {
   

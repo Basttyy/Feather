@@ -1,11 +1,11 @@
 <?php
 
-namespace Basttyy\FastServer;
+namespace Feather;
 
-use Basttyy\FastServer\Middleware\Router;
+use Feather\Middleware\Router;
 use React\Http\HttpServer;
 use React\Socket\SocketServer;
-use Basttyy\FastServer\Middleware\Cascade;
+use Feather\Middleware\Cascade;
 use Evenement\EventEmitter;
 use Psr\Http\Message\ServerRequestInterface;
 

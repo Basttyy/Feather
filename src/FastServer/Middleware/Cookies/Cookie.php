@@ -1,6 +1,6 @@
 <?php
-namespace Basttyy\FastServer\Middleware\Cookies;
-use Basttyy\FastServer\Utils;
+namespace Feather\Middleware\Cookies;
+use Feather\Utils;
 class Cookie {
   
   public $value;

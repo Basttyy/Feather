@@ -1,6 +1,6 @@
 <?php
 
-namespace Basttyy\FastServer\Middleware;
+namespace Feather\Middleware;
 /**
  * Catches Exceptions and renders a page with debug output. Useful for development.
  *
@@ -55,7 +55,7 @@ class ExceptionHandler {
   
 }
 
-namespace Basttyy\FastServer\Middleware\ExceptionHandler;
+namespace Feather\Middleware\ExceptionHandler;
 
 function common_path( $path, $root ){
   if ( strpos( $path, $root ) == 0 ) {

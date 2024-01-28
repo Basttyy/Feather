@@ -7,7 +7,7 @@
  * 
  * A layout is simply a view that has an `echo $content` somewhere in it.
  */
-namespace Basttyy\FastServer;
+namespace Feather;
 
 class View {
     
@@ -122,13 +122,4 @@ class ViewContext {
     
   }
   
-}
-
-namespace Basttyy\FastServer\Exception;
-use Basttyy\FastServer\Exception;
-
-class MissingView extends Exception {
-  function __construct( $message ){
-    parent::__construct( $message, 404 );
-  }
 }

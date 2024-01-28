@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer;
+namespace Feather;
 use React\Http\Message\Response as HttpResponse;
 //use Psr\Http\Message\ResponseInterface as HttpResponse;
 use Evenement\EventEmitter;

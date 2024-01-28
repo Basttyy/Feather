@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
+namespace Feather\Middleware;
 /*
  * Given an array of middlewares it will perform each middleware by
  * cascading the request and response through each middleware

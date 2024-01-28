@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
+namespace Feather\Middleware;
 /**
  * With a given prefix like "app" it will strip the prefix from each
  * request path and store it in $request->namespace which will be an array

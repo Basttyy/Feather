@@ -1,5 +1,5 @@
 <?php
-namespace Basttyy\FastServer\Middleware;
+namespace Feather\Middleware;
 
 class BasicAuth {
   private $unauthorizedAction;

@@ -1,15 +1,15 @@
 {
-  "name" : "basttyy/fast-server",
-  "description" : "Async PHP microframework",
-  "homepage" : "http://github.com/basttyy/fastserver",
+  "name" : "basttyy/feather",
+  "description" : "PHP Lightweight microframework heavily inspired by Laravel",
+  "homepage" : "http://github.com/basttyy/feather",
   "license" : "MIT",
   "version" : "0.1.1",
   "authors" : [
-  {
-    "name" : "Abdulbasit Mamman",
-    "email" : "basttyydev@gmail.com",
-    "homepage" : "https://iothings.com.ng"
-  }
+    {
+      "name" : "Abdulbasit Mamman",
+      "email" : "basttyydev@gmail.com",
+      "homepage" : "https://iothings.com.ng"
+    }
   ],
   "require" : {
     "php" : ">=8.0",
@@ -20,7 +20,7 @@
   },
   "autoload": {
       "psr-4": {
-          "Basttyy\\FastServer\\": "src"
+          "Feather\\": "src"
       }
   }
 }
